@@ -22,7 +22,7 @@ const evenNumbers = mixedNumbers.filter(function(element){
     return element % 2 === 0
 }) 
 // = mixedNumbers.filter(/* Provide Your Callback Here */)
-const evenNumbers = mixedNumbers.filter(elem => elem % 2 === 0 )
+//const evenNumbers = mixedNumbers.filter(elem => elem % 2 === 0 )
 
 
 console.log(evenNumbers)
@@ -49,7 +49,7 @@ const postTaxPrices = prices.map(function(element){
   return element * 1.07
 })  // = prices.map(/* Provide Your Callback Here );
 
-const postTaxPrices = prices.map(elem => elem * 1.07)
+//const postTaxPrices = prices.map(elem => elem * 1.07)
 
 console.log(postTaxPrices)
 
@@ -67,8 +67,11 @@ const populations = [8175133, 3792621, 2695598, 2100263];
 */
 
 // CODE HERE
-const totalPopulation //  = populations.reduce(/* Provide Your Callback Here */)
+const totalPopulation = totalPopulation.reduce(function(acc,elem ){
+  return acc + elem
+}) //  = populations.reduce(/* Provide Your Callback Here */)
 
+const totalPopulation = totalPopulation.reduce((acc,elem) => {acc + elem})
 
 
 ////////// PROBLEM 4 //////////
