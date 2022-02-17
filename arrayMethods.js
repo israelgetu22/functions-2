@@ -110,12 +110,21 @@ const orders = [{"price":15,"tax":0.09},{"price":42,"tax":0.07},{"price":56,"tax
 // Do not edit code above.
 
 /*
-  Use a higher order method to get all the order totals after adding in the sales tax (given to you as a tax rate, hint: you'll need to do some multiplication). Your answer should be an array of numbers, one total for each order.
+  Use a higher order method to get all the order totals after adding in the sales tax
+   (given to you as a tax rate, hint: you'll need to do some multiplication). 
+   Your answer should be an array of numbers, one total for each order.
 */
 
 // CODE HERE
 
+const orderTotals = orders.map(function(elem) {
+  // could have used bracket notation
+  // return elem["price"] + (elem["price"] * elem["tax"])
+  return elem.price + (elem.price * elem.tax)
+})
 
+// with an arrow function
+const orderTotals = orders.map(order => order.price + (order.price * order.tax))
 
 ////////// PROBLEM 6 //////////
 
@@ -134,3 +143,5 @@ const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
 */
 
 // CODE HERE
+
+   
