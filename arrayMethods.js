@@ -143,5 +143,16 @@ const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
 */
 
 // CODE HERE
+const bobsTotal = purchases.filter(function (elem) {
+    return elem.owner === "Bob";
+  })
+  .reduce(function (acc, elem) {
+    return acc + elem.price;
+  }, 0);
+
+// with an arrow function
+const bobsTotal = purchases
+  .filter((purchase) => purchase.owner === "Bob")
+  .reduce((a, c) => a + c.price, 0);
 
    
