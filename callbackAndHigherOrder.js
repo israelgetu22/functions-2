@@ -7,14 +7,14 @@
 
 // CODE HERE
 function multiply(num1, num2, answer) {
-  answer(num1,num2);
+  answer(num1, num2);
 }
 
-function answer(num1,num2){
-  console.log(num1*num2)
+function answer(num1, num2) {
+  console.log(num1 * num2);
 }
 
-multiply(4,3,operation)
+multiply(4, 3, operation);
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
@@ -23,7 +23,6 @@ multiply(4,3,operation)
 // multiply(4, 3, (answer) => {
 //   console.log("The answer is " + answer); //should console.log 12
 // });
-
 
 ////////// PROBLEMS 2 - 6 //////////
 
@@ -83,12 +82,12 @@ last(names, (lastName) => {
 
 // CODE HERE
 let contains = function (arr, name, callback) {
-    if (arr.includes(name)=== true) {
-      callback(true)
-    }else{
-      callback(false)
-    }    
-}
+  if (arr.includes(name) === true) {
+    callback(true);
+  } else {
+    callback(false);
+  }
+};
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
@@ -133,7 +132,7 @@ let uniq = function (arr, callback) {
 // CODE HERE
 uniq(names, function (uniqArr) {
   console.log(
-    "The new names array with all the duplicate items removed is" + uniqArr)
+    "The new names array with all the duplicate items removed is" + uniqArr
   );
 });
 
