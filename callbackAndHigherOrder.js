@@ -6,17 +6,24 @@
 */
 
 // CODE HERE
-function multiply(num1, num2, operation) {
-  operation(num1 * num2);
+function multiply(num1, num2, answer) {
+  answer(num1,num2);
 }
+
+function answer(num1,num2){
+  console.log(num1*num2)
+}
+
+multiply(4,3,operation)
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
 
-multiply(4, 3, (answer) => {
-  console.log("The answer is " + answer); //should console.log 12
-});
+// multiply(4, 3, (answer) => {
+//   console.log("The answer is " + answer); //should console.log 12
+// });
+
 
 ////////// PROBLEMS 2 - 6 //////////
 
@@ -34,7 +41,7 @@ var names = ["Tyler", "Cahlan", "Ryan", "Colt", "Tyler", "Blaine", "Cahlan"];
 */
 
 // CODE HERE
-let first = function first(arr, callback) {
+const first = function first(arr, callback) {
   return callback(arr[0]);
 };
 // UNCOMMENT THE FUNCTION CALL BELOW
@@ -75,18 +82,25 @@ last(names, (lastName) => {
 */
 
 // CODE HERE
+let contains = function (arr, name, callback) {
+    if (arr.includes(name)=== true) {
+      callback(true)
+    }else{
+      callback(false)
+    }    
+}
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
 
-// contains(names, 'Colt', result => {
-//   if(result === true){
-//     console.log('Colt is in the array')
-//   } else {
-//     console.log('Colt is not in the array')
-//   }
-// })
+contains(names, "Colt", (result) => {
+  if (result === true) {
+    console.log("Colt is in the array");
+  } else {
+    console.log("Colt is not in the array");
+  }
+});
 
 ////////// PROBLEM 5 //////////
 
@@ -97,6 +111,17 @@ last(names, (lastName) => {
 */
 
 // CODE HERE
+let uniq = function (arr, callback) {
+  for (let i = 0; i < arr.length; i++) {
+    for (let k = 0; k < arr.length; k++) {
+      if (arr[i] === arr[k]) {
+        arr.splice(k, 1);
+        k--;
+      }
+    }
+  }
+  callback(arr);
+};
 
 /*
   Invoke the uniq function, passing in the names array from above and a callback function.
@@ -106,6 +131,11 @@ last(names, (lastName) => {
 */
 
 // CODE HERE
+uniq(names, function (uniqArr) {
+  console.log(
+    "The new names array with all the duplicate items removed is" + uniqArr)
+  );
+});
 
 ////////// PROBLEM 6 //////////
 
@@ -128,7 +158,8 @@ last(names, (lastName) => {
 ////////// PROBLEM 7 //////////
 
 /*
-  Write a function called getUserById that takes in three parameters: an array of objects (users), an id and a callback, and searches for the user with a matching id.
+  Write a function called getUserById that takes in three parameters:
+   an array of objects (users), an id and a callback, and searches for the user with a matching id.
   When the correct user object is found, invoke the callback with the user object as an argument.
 */
 
